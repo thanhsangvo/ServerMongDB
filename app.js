@@ -5,9 +5,20 @@ import mongoose from 'mongoose';
 import logger from 'morgan';
 const app = express();
 var http = require('http');
-var mongodb = require('mongodb');
-var MongoClient = mongodb.MongoClient;
 var url = 'mongodb://localhost:27017/SoundSleep';
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(logger('dev'));
+
+// set up mongoose
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }).then(()=> {
+    console.log('Database connected');
+  })
+  .catch((error)=> {
+    console.log('Error connecting to database');
+  });
+
 
 MongoClient.connect(url, function (err, db) {
   if (err) {
