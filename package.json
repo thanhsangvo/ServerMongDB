@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "jshintConfig": {
+    "esversion": 6
+  },
+  "author": "devsang",
+  "license": "ISC",
+  "dependencies": {
+    "jshint": "^2.13.4",
+    "mongodb": "^4.4.1",
+    "mongoose": "^6.2.9",
+    "postman-collection": "^4.1.2"
+  },
+  "devDependencies": {
+    "kill-port": "^1.6.1"
+  }
+}
